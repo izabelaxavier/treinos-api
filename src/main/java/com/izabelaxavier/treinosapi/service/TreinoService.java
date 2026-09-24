@@ -1,5 +1,7 @@
 package com.izabelaxavier.treinosapi.service;
 
+import com.izabelaxavier.treinosapi.dto.TreinoRequestDto;
+import com.izabelaxavier.treinosapi.dto.TreinoResponseDto;
 import org.springframework.stereotype.Service;
 import com.izabelaxavier.treinosapi.repository.TreinoRepository;
 import com.izabelaxavier.treinosapi.model.Treino;
@@ -19,7 +21,22 @@ public class TreinoService {
         return treinoRepository.findAll();
     }
 
-    public Treino salvar(Treino treino) {
-        return treinoRepository.save(treino);
+    public TreinoResponseDto salvar(TreinoRequestDto dto) {
+
+        if (treinoRepository.existsByNome(dto.nome())){
+            throw new RuntimeException("Ja existe um treino cadastrado com esse nome");
+        }
+
+        Treino treino = new Treino();
+        treino.setNome(dto.nome());
+        treino.setDescricao(dto.descricao());
+
+        Treino treinoSalvo = treinoRepository.save(treino);
+
+        return new TreinoResponseDto(
+                treinoSalvo.getId(),
+                treinoSalvo.getNome(),
+                treinoSalvo.getDescricao()
+        );
     }
 }

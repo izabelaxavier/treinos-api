@@ -1,7 +1,12 @@
 package com.izabelaxavier.treinosapi.controller;
 
+import com.izabelaxavier.treinosapi.dto.TreinoRequestDto;
+import com.izabelaxavier.treinosapi.dto.TreinoResponseDto;
 import com.izabelaxavier.treinosapi.model.Treino;
 
+import org.apache.coyote.Response;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,7 +32,7 @@ public class TreinoController {
     }
 
     @PostMapping
-    public Treino salvar(@RequestBody Treino treino) {
-        return treinoService.salvar(treino);
+    public ResponseEntity<TreinoResponseDto> salvar(@RequestBody TreinoRequestDto treino) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(treinoService.salvar(treino));
     }
 }
