@@ -23,10 +23,6 @@ public class TreinoService {
 
     public TreinoResponseDto salvar(TreinoRequestDto dto) {
 
-        if (treinoRepository.existsByNome(dto.nome())){
-            throw new RuntimeException("Ja existe um treino cadastrado com esse nome");
-        }
-
         Treino treino = new Treino();
         treino.setNome(dto.nome());
         treino.setDescricao(dto.descricao());
