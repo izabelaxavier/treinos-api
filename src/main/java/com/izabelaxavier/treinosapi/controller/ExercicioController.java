@@ -8,6 +8,8 @@ import com.izabelaxavier.treinosapi.model.Exercicio;
 import org.springframework.web.bind.annotation.PostMapping;
 import com.izabelaxavier.treinosapi.dto.ExercicioRequest;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import java.util.List;
 
 
@@ -27,5 +29,9 @@ public class ExercicioController {
     @PostMapping
     public Exercicio salvar(@RequestBody ExercicioRequest request) {
         return exercicioService.salvar(request);
+    }
+    @PutMapping("/{id}")
+    public Exercicio atualizar(@PathVariable Long id, @RequestBody ExercicioRequest request) {
+        return exercicioService.atualizar(id, request);
     }
 }

@@ -32,4 +32,16 @@ public class ExercicioService {
         return exercicioRepository.save(exercicio);
 
     }
+
+    public Exercicio atualizar(Long id, ExercicioRequest request) {
+        Exercicio exercicio = exercicioRepository.findById(id).orElseThrow();
+
+        exercicio.setNome(request.getNome());
+        exercicio.setGrupoMuscular(request.getGrupoMuscular());
+        exercicio.setDescricao(request.getDescricao());
+        exercicio.setFotoUrl(request.getFotoUrl());
+        exercicio.setVideoUrl(request.getVideoUrl());
+
+        return exercicioRepository.save(exercicio);
+    }
 }
