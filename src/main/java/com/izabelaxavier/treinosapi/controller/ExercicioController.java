@@ -26,12 +26,19 @@ public class ExercicioController {
     public List<Exercicio> buscarTodos() {
         return exercicioService.buscarTodos();
     }
+
     @PostMapping
     public Exercicio salvar(@RequestBody ExercicioRequest request) {
         return exercicioService.salvar(request);
     }
+
     @PutMapping("/{id}")
     public Exercicio atualizar(@PathVariable Long id, @RequestBody ExercicioRequest request) {
         return exercicioService.atualizar(id, request);
+    }
+
+    @GetMapping("/{id}")
+    public Exercicio buscarPorId(@PathVariable Long id) {
+        return exercicioService.buscarPorId(id);
     }
 }

@@ -3,6 +3,7 @@ package com.izabelaxavier.treinosapi.service;
 import com.izabelaxavier.treinosapi.dto.ExercicioRequest;
 import com.izabelaxavier.treinosapi.model.Exercicio;
 import com.izabelaxavier.treinosapi.repository.ExercicioRepository;
+import com.izabelaxavier.treinosapi.exception.RecursoNaoEncontradoException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,6 +21,11 @@ public class ExercicioService {
         return exercicioRepository.findAll();
     }
 
+    public Exercicio buscarPorId(Long id) {
+        return exercicioRepository.findById(id)
+                .orElseThrow(() -> new RecursoNaoEncontradoException("Exercício não encontrado"));
+    }
+
     public Exercicio salvar(ExercicioRequest request) {
         Exercicio exercicio = new Exercicio();
 
@@ -34,7 +40,8 @@ public class ExercicioService {
     }
 
     public Exercicio atualizar(Long id, ExercicioRequest request) {
-        Exercicio exercicio = exercicioRepository.findById(id).orElseThrow();
+        Exercicio exercicio = exercicioRepository.findById(id)
+                .orElseThrow(() -> new RecursoNaoEncontradoException("Exercício não encontrado"));
 
         exercicio.setNome(request.getNome());
         exercicio.setGrupoMuscular(request.getGrupoMuscular());
