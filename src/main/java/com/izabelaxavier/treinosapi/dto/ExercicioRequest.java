@@ -1,13 +1,18 @@
 package com.izabelaxavier.treinosapi.dto;
 
+import jakarta.validation.constraints.NotBlank;
+
 public class ExercicioRequest {
 
+    @NotBlank(message = "O nome do Exercício é obrigatório")
     private String nome;
+
+    @NotBlank(message = "O grupo muscular é obrigatório")
     private String grupoMuscular;
+
     private String descricao;
     private String fotoUrl;
     private String videoUrl;
-
 
     public ExercicioRequest() {
     }
