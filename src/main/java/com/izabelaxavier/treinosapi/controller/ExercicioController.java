@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import jakarta.validation.Valid;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import java.util.List;
 
 
@@ -29,6 +31,7 @@ public class ExercicioController {
     }
 
     @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
     public Exercicio salvar(@Valid @RequestBody ExercicioRequest request) {
         return exercicioService.salvar(request);
     }
