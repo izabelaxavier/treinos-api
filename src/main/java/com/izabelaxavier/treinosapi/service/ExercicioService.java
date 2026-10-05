@@ -51,4 +51,11 @@ public class ExercicioService {
 
         return exercicioRepository.save(exercicio);
     }
+
+    public void excluir(Long id) {
+        Exercicio exercicio = exercicioRepository.findById(id)
+                .orElseThrow(() -> new RecursoNaoEncontradoException("Exercício não encontrado"));
+
+        exercicioRepository.delete(exercicio);
+    }
 }

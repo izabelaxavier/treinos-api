@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import java.util.List;
 
 
@@ -39,6 +40,12 @@ public class ExercicioController {
     @PutMapping("/{id}")
     public Exercicio atualizar(@PathVariable Long id, @Valid @RequestBody ExercicioRequest request) {
         return exercicioService.atualizar(id, request);
+    }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void excluir(@PathVariable Long id) {
+        exercicioService.excluir(id);
     }
 
     @GetMapping("/{id}")
