@@ -10,6 +10,10 @@ public class Exercicio {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    public Long getId() {
+        return id;
+    }
+
     @NotBlank(message = "O nome do Exercício é obrigatório")
     private String nome;
 
