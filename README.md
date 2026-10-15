@@ -1,7 +1,7 @@
-# Treinos API
+# Treinos API — Gestão de Treinos e Exercícios
 
 <p align="center">
-  <strong>Uma API REST para organizar exercícios, treinos e evolução física.</strong>
+  <strong>Organize exercícios, monte treinos e acompanhe sua evolução.</strong>
 </p>
 
 <p align="center">
