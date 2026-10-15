@@ -2,12 +2,7 @@
 
 API REST desenvolvida em **Java 17 com Spring Boot** para gerenciamento de exercícios físicos, treinos e registros de desempenho. O projeto utiliza **MySQL** para persistência, **Spring Data JPA/Hibernate** como ORM e **Spring Security** para proteger as operações de escrita do recurso de exercícios.
 
-> Projeto acadêmico das disciplinas de Arquitetura e Desenvolvimento de APIs.
-
-## Integrantes
-
-- **Izabela Xavier de Jesus** — RU 5315281
-- **João Gabriel Costa Fernando** — RU 5327853
+O projeto foi inicialmente desenvolvido em um contexto acadêmico, mas a documentação e a organização foram mantidas com foco em uma futura evolução para uso real.
 
 ## Visão geral
 
