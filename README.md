@@ -1,8 +1,37 @@
 # Treinos API
 
+<p align="center">
+  <strong>Uma API REST para organizar exercícios, treinos e evolução física.</strong>
+</p>
+
+<p align="center">
+  <a href="https://github.com/izabelaxavier/treinos-api"><img src="https://img.shields.io/badge/Maven-Wrapper-C71A36?style=for-the-badge&logo=apachemaven&logoColor=white" alt="Maven Wrapper"></a>
+  <a href="https://github.com/izabelaxavier/treinos-api"><img src="https://img.shields.io/github/repo-size/izabelaxavier/treinos-api?style=for-the-badge&color=blue" alt="Tamanho do repositório"></a>
+  <img src="https://img.shields.io/badge/Java-17-orange?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java 17">
+  <img src="https://img.shields.io/badge/Spring%20Boot-4.1.1-6DB33F?style=for-the-badge&logo=springboot&logoColor=white" alt="Spring Boot">
+  <img src="https://img.shields.io/badge/MySQL-8+-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL">
+</p>
+
+<p align="center">
+  <a href="#visão-geral">Visão geral</a> ·
+  <a href="#execução">Execução</a> ·
+  <a href="#endpoints">Endpoints</a> ·
+  <a href="#autenticação-e-autorização">Autenticação</a>
+</p>
+
 API REST desenvolvida em **Java 17 com Spring Boot** para gerenciamento de exercícios físicos, treinos e registros de desempenho. O projeto utiliza **MySQL** para persistência, **Spring Data JPA/Hibernate** como ORM e **Spring Security** para proteger as operações de escrita do recurso de exercícios.
 
-O projeto foi inicialmente desenvolvido em um contexto acadêmico, mas a documentação e a organização foram mantidas com foco em uma futura evolução para uso real.
+> O projeto começou em um contexto acadêmico, mas está organizado para evoluir gradualmente para uma aplicação de uso real.
+
+## Destaques
+
+| | Recurso | Descrição |
+|---|---|---|
+| **CRUD** | Exercícios | Cadastro, consulta, atualização e exclusão de exercícios. |
+| **Relacionamentos** | Treinos | Associação entre treinos e exercícios. |
+| **Acompanhamento** | Registros | Data, séries, repetições e carga dos exercícios realizados. |
+| **Segurança** | HTTP Basic | Proteção das operações de escrita com credenciais de ambiente. |
+| **Integração** | CORS | Comunicação preparada para um frontend local. |
 
 ## Visão geral
 
